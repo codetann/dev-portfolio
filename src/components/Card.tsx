@@ -6,6 +6,7 @@ const CardContainer = styled.div`
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 1rem;
 
   @media (max-width: 900px) {

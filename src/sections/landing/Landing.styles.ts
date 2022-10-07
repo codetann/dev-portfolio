@@ -9,6 +9,10 @@ export const Container = styled.section`
   gap: 1.5rem;
   width: 100%;
 
+  @media (max-width: 900px) {
+    padding: 1rem;
+  }
+
   p {
     max-width: 650px;
     line-height: 1.7rem;

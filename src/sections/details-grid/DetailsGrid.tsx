@@ -1,5 +1,5 @@
 import { Card, Article } from "@/components";
-import { FaBriefcase } from "react-icons/fa";
+import WorkCard from "./WorkCard";
 import { BiBriefcaseAlt2, BiEnvelope } from "react-icons/bi";
 import { Container, ContainerColumn, Articles } from "./DetailsGrid.styles";
 
@@ -29,16 +29,7 @@ export default function DetailsGrid() {
             <button>Join</button>
           </div>
         </Card>
-        <Card icon={<BiBriefcaseAlt2 size={24} />} title="Work">
-          <p>
-            Get notified when I publish something new, and unsubscribe at any
-            time.
-          </p>
-          <div style={{ display: "flex", gap: "1rem" }}>
-            <input type="text" placeholder="Your email" />
-            <button>Join</button>
-          </div>
-        </Card>
+        <WorkCard />
       </ContainerColumn>
     </Container>
   );
