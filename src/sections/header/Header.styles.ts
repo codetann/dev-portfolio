@@ -5,9 +5,9 @@ const RelativeContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 10rem;
+  height: 8rem;
   width: 100%;
-  position: relative;
+  padding: 0 1rem;
 
   @media (min-width: 900px) {
   }
@@ -69,7 +69,7 @@ const MenuLinks = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -78,6 +78,7 @@ const MenuLinks = styled.div`
   background: ${({ theme }) => theme.colors.gray[800]};
   border-radius: 1rem;
   transform: scale(0.9);
+  padding: 1rem;
 `;
 
 const Overlay = styled.div`
@@ -88,10 +89,10 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 150vh;
   background: rgba(0, 0, 0, 0.512);
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(10px);
+  z-index: 100;
 `;
 
 export {

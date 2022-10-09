@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { useState, useEffect, useRef } from "react";
-import { Fade } from "@components";
+import { Fade, Scale } from "@components";
 import {
   RelativeContainer,
   Nav,
@@ -19,6 +19,15 @@ const LINKS = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isOpen) {
+      body!.style.overflow = "hidden";
+    } else {
+      body!.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
     <>
       <RelativeContainer>
@@ -38,14 +47,18 @@ export default function Header() {
 
 function Menu({ isOpen, setIsOpen }: any) {
   return (
-    <Fade in={isOpen} timeout={150}>
-      <MenuLinks>
-        <button onClick={() => setIsOpen(false)}>Exit</button>
-        {LINKS.map(({ href, label }) => (
-          <NavLink href={href}>{label}</NavLink>
-        ))}
-      </MenuLinks>
-      <Overlay />
-    </Fade>
+    <>
+      <Scale in={isOpen} timeout={150}>
+        <MenuLinks>
+          <button onClick={() => setIsOpen(false)}>x</button>
+          {LINKS.map(({ href, label }) => (
+            <NavLink href={href}>{label}</NavLink>
+          ))}
+        </MenuLinks>
+      </Scale>
+      <Fade in={isOpen} timeout={100}>
+        <Overlay onClick={() => setIsOpen(false)} />
+      </Fade>
+    </>
   );
 }
