@@ -8,6 +8,10 @@ const ArticleContainer = styled.article`
   transition: all 0.15s ease-in-out;
   cursor: pointer;
 
+  i {
+    transition: all 0.15s ease-in-out;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -25,6 +29,8 @@ const ArticleContainer = styled.article`
   }
 
   &:hover {
+    transform: translateX(3px);
+
     &:before {
       content: "";
       position: absolute;
@@ -62,6 +68,12 @@ const ArticleDescription = styled.p`
 const ArticleLink = styled.a`
   color: #75b0e1;
   font-size: ${({ theme }) => theme.fontSize.sm};
+
+  &:hover {
+    & > i {
+      transform: translateX(3px);
+    }
+  }
 `;
 
 interface Props {
@@ -76,7 +88,9 @@ export default function Article({ title, description, date }: Props) {
       <ArticleDate>{date}</ArticleDate>
       <ArticleTitle>{title}</ArticleTitle>
       <ArticleDescription>{description}</ArticleDescription>
-      <ArticleLink>Read article</ArticleLink>
+      <ArticleLink>
+        Read article <i>→</i>
+      </ArticleLink>
     </ArticleContainer>
   );
 }

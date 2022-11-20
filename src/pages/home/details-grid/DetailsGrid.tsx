@@ -3,7 +3,7 @@ import WorkCard from "./WorkCard";
 import { BiBriefcaseAlt2, BiEnvelope } from "react-icons/bi";
 import { Container, ContainerColumn, Articles } from "./DetailsGrid.styles";
 
-export default function DetailsGrid() {
+export function DetailsGrid() {
   return (
     <Container>
       <Articles>

@@ -1,16 +1,24 @@
 import { useState } from "react";
 import { Layout, Navbar } from "@components";
-import { DetailsGrid, Landing, Header } from "src/sections";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { config } from "src/config";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  function renderRoutes() {
+    return config.pages.map((page) => {
+      return (
+        <Route key={page.title} path={page.path} element={<page.component />} />
+      );
+    });
+  }
+
   return (
-    <Layout>
-      <Header />
-      <Landing />
-      <DetailsGrid />
-    </Layout>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>{renderRoutes() as any}</Routes>
+    </BrowserRouter>
   );
 }
 

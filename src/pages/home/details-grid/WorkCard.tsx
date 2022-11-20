@@ -19,6 +19,7 @@ export default function WorkCard() {
           img="https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/devmountain/original.png?1568083750"
         />
       </Jobs>
+      <button>Download CV ↓</button>
     </Card>
   );
 }

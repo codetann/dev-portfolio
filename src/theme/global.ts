@@ -58,14 +58,26 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    color: #DDDDDE;
-    background-color: ${({ theme }) => theme.colors.gray[400]};
-    font-size: ${({ theme }) => theme.fontSize.sm};
-    font-weight: 600 ;
+    color: #ffffffa0;
+    background-color: ${({ theme }) => theme.colors.gray[700]};
+    font-size: 14px;
+    font-weight: 400 ;
     padding: .7rem .9rem;
-    border: 1px solid ${({ theme }) => theme.colors.gray[400]};
+    border: 1px solid ${({ theme }) => theme.colors.gray[700]};
     border-radius: 0.5rem;
     line-height: 1;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
 
+    &:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+      color: white;
+    }
+
+    &:active {
+      opacity: .7;
+      transform: scale(.98)
+    }
   }
 `;

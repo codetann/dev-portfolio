@@ -17,7 +17,7 @@ const LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Header() {
+export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
