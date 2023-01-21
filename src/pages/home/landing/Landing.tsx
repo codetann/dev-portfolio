@@ -1,11 +1,12 @@
 import { Container, Wrapper } from "./Landing.styles";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Avatar } from "@/components";
+import { config } from "@/config";
 
 export function Landing() {
   return (
     <Container>
-      <Avatar src="https://media-exp1.licdn.com/dms/image/D5635AQFzgZePT2LKPA/profile-framedphoto-shrink_200_200/0/1668721821611?e=1669399200&v=beta&t=GNZxSDuX76JC621aDH0GzK6TZycQhd18PwQvPnGYikg" />
+      <Avatar src={config.profile_photo} />
       <h1>Software designer, founder, and amateur astronaut.</h1>
       <p>
         I'm Spencer, a software designer and entrepreneur based in New York

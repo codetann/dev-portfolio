@@ -57,6 +57,26 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  textarea {
+
+    color: ${({ theme }) => theme.colors.gray[50]};
+    padding: .7rem 1rem;
+    border: 1px solid ${({ theme }) => theme.colors.gray[400]};
+    border-radius: 0.5rem;
+    background-color:  ${({ theme }) => theme.colors.gray[700]};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    width: 100% ;
+    resize: vertical;
+
+
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.gray[200]};
+    }
+
+  }
+
+
   button {
     color: #ffffffa0;
     background-color: ${({ theme }) => theme.colors.gray[700]};

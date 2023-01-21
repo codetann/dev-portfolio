@@ -17,7 +17,7 @@ export const Container = styled.section`
 
 export const ContainerColumn = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 2rem;
