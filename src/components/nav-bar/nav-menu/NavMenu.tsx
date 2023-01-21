@@ -8,36 +8,32 @@ function Menu() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (ref.current) {
-      const body = document.querySelector("body");
-      if (isOpen) {
-        body!.style.overflow = "hidden";
-      } else {
-        ref.current!.style.opacity = "0";
-
-        setTimeout(() => {
-          body!.style.overflow = "auto";
-        }, 2000);
-      }
+    const body = document.querySelector("body");
+    if (isOpen) {
+      body!.style.overflow = "hidden";
+    } else {
+      body!.style.overflow = "auto";
     }
   }, [isOpen]);
 
   return (
     <>
-      <styles.Container show={isOpen}>
-        <styles.Button onClick={() => setIsOpen(!isOpen)}>Menu</styles.Button>
-      </styles.Container>
-      <Fade in={isOpen} timeout={300}>
-        <styles.Wrapper ref={ref} isOpen={isOpen}>
-          <styles.Links isOpen={isOpen}>
-            {config.pages.map(({ path, title }) => (
-              <styles.Link href={path} onClick={() => setIsOpen(false)}>
-                {title}
-              </styles.Link>
-            ))}
-          </styles.Links>
-        </styles.Wrapper>
-      </Fade>
+      <styles.Button onClick={() => setIsOpen(!isOpen)}>Menu</styles.Button>
+
+      {isOpen && (
+        <>
+          <styles.Wrapper ref={ref} isOpen={true}>
+            <styles.Links isOpen={isOpen}>
+              {config.pages.map(({ path, title }) => (
+                <styles.Link href={path} onClick={() => setIsOpen(false)}>
+                  {title}
+                </styles.Link>
+              ))}
+            </styles.Links>
+          </styles.Wrapper>
+          <styles.Overlay onClick={() => setIsOpen(!isOpen)} />
+        </>
+      )}
     </>
   );
 }

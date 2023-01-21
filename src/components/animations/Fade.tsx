@@ -34,6 +34,7 @@ export default function Fade({ in: inProp, timeout, children }: FadeProps) {
             height: "100vh",
             width: "100%",
             zIndex: 200,
+            background: "red",
             ...styles[state],
           }}
         >

@@ -10,19 +10,12 @@ const Container = styled.div<ContainerProps>`
   align-items: center;
   justify-content: flex-end;
   position: sticky;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 5rem;
   width: 100%;
   z-index: 100;
-  height: 0;
-  transition: all 0.2s ease-in-out;
 
-  ${({ show }) =>
-    show &&
-    css`
-      height: 100vh;
-      backdrop-filter: blur(5px);
-    `};
+  transition: all 0.2s ease-in-out;
 
   @media (max-width: 900px) {
     display: flex;
@@ -37,25 +30,25 @@ const Button = styled.button`
   background: ${({ theme }) => theme.colors.gray[600]};
   padding: 0.7rem 1.5rem;
   border-radius: 10rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  @media (min-width: 900px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div<{ isOpen?: boolean }>`
   display: flex;
-  height: 0;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-
-  ${({ isOpen }) =>
-    isOpen &&
-    css`
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      height: 100vh;
-    `};
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 `;
 const Links = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -77,4 +70,16 @@ const Link = styled.a`
   font-size: ${({ theme }) => theme.fontSize.sm};
 `;
 
-export { Container, Button, Wrapper, Links, Link };
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 800;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+`;
+
+export { Container, Button, Wrapper, Links, Link, Overlay };
