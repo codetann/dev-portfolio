@@ -19,7 +19,6 @@ function Menu() {
   return (
     <>
       <styles.Button onClick={() => setIsOpen(!isOpen)}>Menu</styles.Button>
-
       {isOpen && (
         <>
           <styles.Wrapper ref={ref} isOpen={true}>
