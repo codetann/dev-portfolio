@@ -42,4 +42,5 @@ export const Image = styled.img`
   border-radius: 50%;
   object-fit: contain;
   object-position: center;
+  outline: 4px solid ${({ theme }) => theme.colors.gray[400]};
 `;
